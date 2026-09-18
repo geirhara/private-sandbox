@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <title>Plakat - Mannsgruppe | Gutta Lytter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --brand-blue: #0F3D54;
+      --brand-gold: #D4A06F;
+      --brand-red: #990000;
+      --grey-light: #F5F5F5;
+      --grey-dark: #333333;
+    }
+
+    * { 
+      box-sizing: border-box; 
+      margin: 0; 
+      padding: 0; 
+    }
+
+    html, body {
+      width: 210mm;
+      height: 297mm;
+      font-family: 'Montserrat', system-ui, sans-serif;
+      overflow: hidden;
+    }
+
+    .page {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    /* Top light band */
+    .top-band {
+      background: var(--grey-light);
+      padding: 15mm 20mm;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .logo-container {
+      flex: 0 0 auto;
+    }
+
+    .logo-container img {
+      height: 20mm;
+      width: auto;
+    }
+
+    .company-info {
+      text-align: right;
+      font-size: 10pt;
+      color: var(--grey-dark);
+      font-weight: 500;
+    }
+
+    /* Main content area */
+    .main-content {
+      flex: 1;
+      background: var(--brand-blue);
+      padding: 25mm 20mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .header-section {
+      text-align: left;
+    }
+
+    .header-section h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 24pt;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 8mm;
+      line-height: 1.2;
+    }
+
+    .header-section p {
+      font-size: 12pt;
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.6;
+      margin-bottom: 12mm;
+    }
+
+    .tagline {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 18pt;
+      font-weight: 600;
+      color: var(--brand-gold);
+      margin-bottom: 10mm;
+      line-height: 1.3;
+    }
+
+    .description {
+      font-size: 11pt;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.7;
+      margin-bottom: 15mm;
+    }
+
+    .features {
+      font-size: 10pt;
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.8;
+      margin-bottom: 15mm;
+    }
+
+    .features ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .features li {
+      margin-bottom: 5mm;
+      position: relative;
+      padding-left: 15mm;
+    }
+
+    .features li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--brand-gold);
+      font-weight: 700;
+      font-size: 14pt;
+    }
+
+    /* Bottom section with QR code */
+    .bottom-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-top: auto;
+      padding-top: 15mm;
+    }
+
+    .cta-section {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .cta-text {
+      font-size: 14pt;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 8mm;
+    }
+
+    .qr-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8mm;
+    }
+
+    .qr-code {
+      width: 40mm;
+      height: 40mm;
+      background: #ffffff;
+      padding: 5mm;
+      border-radius: 5mm;
+    }
+
+    .qr-code img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .qr-label {
+      font-size: 9pt;
+      color: rgba(255, 255, 255, 0.8);
+      text-align: center;
+    }
+
+    /* Curved arrow */
+    .arrow-container {
+      position: absolute;
+      bottom: 55mm;
+      right: 60mm;
+      width: 40mm;
+      height: 30mm;
+    }
+
+    .curved-arrow {
+      stroke: var(--brand-gold);
+      stroke-width: 2;
+      fill: none;
+      stroke-linecap: round;
+    }
+
+    /* Responsive for screen viewing */
+    @media screen {
+      html, body {
+        width: 100%;
+        height: 100vh;
+        min-height: 297mm;
+      }
+      .page {
+        width: 210mm;
+        height: 297mm;
+        margin: 0 auto;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    @media print {
+      html, body {
+        width: 210mm;
+        height: 297mm;
+      }
+      .page {
+        page-break-before: always;
+        page-break-after: always;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- Top light band -->
+    <div class="top-band">
+      <div class="logo-container">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAClCAYAAAByf6tmAAAFzGlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iWE1QIENvcmUgNS41LjAiPgogPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgPCEtLQogICAgdHlwZT0id29ya2RvcmU6c3BhY2U6dGV4dC1wcmVzZXJ2ZWQiPgogICAgaWQ9IlJERjphYm91dCIvPgogICA8L3JkZjpEZXNjcmlwdGlvbj4KICA8cmRmOlJERj4KICAgPHJkZjpwYXJzZT4KICAgIDxyZGY6bGluZz4KICAgICAgcmRmOmFib3V0PSIiCiAgICAgIHhtbG5zOnhzPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIgogICAgICB4bWxuczpwYXJzZT0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgICAgIHhtbG5zOmludGVyYWN0aXZlPSJodHRwOi8vbnMuYWRvYmUuY29tL3RpZmYvMS4wLyIKICAgICAgaW50ZXJhY3RpdmVQbGFjZT0iVmlldyBDb250ZW50IiAvPgogICAgPC9yZGY6cGFyc2U+CiAgICA8cmRmOlBpeGVsV2lkdGg+NDAwPC9yZGY6UGl4ZWxXaWR0aD4KICAgIDxyZGY6UGl4ZWxYRGltZW5zaW9uPjE2NTwvcmRmOlBpeGVsWERpbWVuc2lvbj4KICAgIDxyZGY6VmVyc2lvbj4xLjA8L3JkZjpWZXJzaW9uPgogICA8cmRmOlJlc29sdXRpb25Vbml0PjI8L3JkZjpSZXNvbHV0aW9uVW5pdD4KICAgPHRpZmY6SXRlbXBTdHlsZT5JbWFnZUJhc2U8L3RpZmY6SXRlbXBTdHlsZT4KICAgPHRpZmY6SXRlbXNJbnRlcmFjdGl2ZT5UcnVlPC90aWZmOk1ldGFkYXRhdGl2ZT4KICAgPHRpZmY6T3JpZ2luYWxVbml0PjE8L3RpZmY6T3JpZ2luYWxVbml0PgogICA8cmRmOmxpbmVhckdyYXBoaWNzPjwvcmRmOmxpbmVhckdyYXBoaWNzPgogICA8ZXhpZjpQaXhlbFhEaW1lbnNpb24+MjwvZXhpZjpQaXhlbFhEaW1lbnNpb24+CiAgICA8ZXhpZjpQaXhlbFlEaW1lbnNpb24+MTY1PC9leGlmOlBpeGVsWURpbWVuc2lvbj4KICAgIDx4bXA6Q3JlYXRvclRvb2w+PHhtcDpQaXhlbGNvbnRlbnQ+MS4wPC94bXA6Q3JlYXRvclRvb2w+PC94bXA6Q3JlYXRvclRvb2w+CiAgICA8cmRmOmxvZz4KICAgICA8cmRmOnBhY2U+CiAgICAgICA8cmRmOnRpZmY+CiAgICAgICAgPHRpZmY6bGluZz4KICAgICAgICAgPHRpZmY6c3BhY2U+CiAgICAgICAgICAgPHRpZmY6c3BhY2U+CiAgICAgICAgICAgICAgPHRpZmY6dHJhbnNmb3JtPSJ0cmFuc2xhdGVYIiB0YWJsZV9pZD0icmVxdWVzdCIvPgogICAgICAgICAgICAgPC90aWZmOnNwYWNlPgogICAgICAgICAgPC90aWZmOnNwYWNlPgogICAgICAgICA8dGlmZjp0aWZtPSJ0cmFuc2xhdGVYIiB0YWJsZV9pZD0icmVxdWVzdCIvPgogICAgICAgICA8L3RpZmY6dHJhbnNmb3JtPgogICAgICAgPC90aWZmOmxvZz4KICAgICAgPC9yZGY6cGFjZT4KICAgPC9yZGY6cm9nPgogIDwvcmRmOlJERj4KPC94OnhtcG1ldCA+CiAgICByZXN0b3JlOgogICAgaW1hZ2U6IHJlc29sdXRpb25zPSJieXRlcyIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczpwaG90b3Nob3A9Imh0dHA6Ly9ucy5hZG9iZS5jb20vcGhvdG9zaG9wLzEuMC8iIHhtbG5zOnNwYWNlPSJodHRwOi8vbnMuYWRvYmUuY29tL3NwYWNlLzEuMC8iIHhtbG5zOm1ldGFkYXRhdGl2ZT0iaHR0cDovL25zLmFkb2JlLmNvbS9tZXRhZGF0YXRpdmUvMS4wLyIgeG1sbnM6ZXhpZj0iaHR0cDovL25zLmFkb2JlLmNvbS9leGlmLzEuMC8iIHhtbG5zOndoZW49Imh0dHA6Ly9ucy5hZG9iZS5jb20vIiB4bXA6bWV0YWRhdGFpZD0iV2hhdCB3ZWJzaXRlIG1hY2hpbmllIG9mIGJyb2Fkc3R3ZWVkIGJ5IG1vemlsbGEiPgogICAgPHhtcE1NOkRpZmY+CiAgICAgPHRpZmY6T3JpZ2luYWxJRD5pZD0iY29tcGxleC1pZCIgZm9yPSJhYm91dCIvPgogICAgPC94bXBNTTpEaWZmPgogICA8cmVzdWx0PjxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRjVGNUY1IiBzdHJva2Utd2lkdGg9IjEuNSIvPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAiIGZpbGw9Im5vbmUiLz48L3N2Zz4K" alt="Geir Hagberg | uChange AS Signatur Logo" />
+      </div>
+      <div class="company-info">
+        uChange AS | When you change the world follows
+      </div>
+    </div>
+
+    <!-- Main content -->
+    <div class="main-content">
+      <div class="header-section">
+        <h1>Gutta Lytter</h1>
+        <p>Mastermind for menn</p>
+        <p class="tagline">En mastermind-gruppe for menn som søker klarhet og handling</p>
+        <p class="description">
+          Et mannsfellesskap for deg som vil ha kontroll over din indre tilstand, 
+          og søker klarhet til å handle i tråd med ditt indre kompass.
+        </p>
+        <div class="features">
+          <p>Du får:</p>
+          <ul>
+            <li>7 menn som møtes 7 ganger over 14 uker</li>
+            <li>Dyp lytting, ærlige samtaler og felles ressurser</li>
+            <li>Struktur, daglig praksis og utvalgte øvelser</li>
+            <li>Innsiktssamtale, workshop, samlinger og festmiddag</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bottom-section">
+        <div class="cta-section">
+          <p class="cta-text">Søk om plass nå</p>
+        </div>
+        <div class="qr-section">
+          <div class="qr-code">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://gh.uchange.no/mannsgruppe/&amp;bgcolor=FFFFFF&amp;color=0F3D54" alt="QR Code til mannsgruppe" />
+          </div>
+          <p class="qr-label">gh.uchange.no/mannsgruppe/</p>
+        </div>
+      </div>
+
+      <!-- Curved arrow -->
+      <div class="arrow-container">
+        <svg width="100%" height="100%" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <path class="curved-arrow" d="M10,80 Q50,20 90,50" marker-end="url(#arrowhead)" />
+          <defs>
+            <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+              <polygon points="0 0, 10 3.5, 0 7" fill="#D4A06F" />
+            </marker>
+          </defs>
+        </svg>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
